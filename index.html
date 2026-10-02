@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Student Management System</title>
+  <meta name="description" content="Secure administrative login portal for the modern Student Management System.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="login-body">
+
+  <div class="login-card">
+    <div class="login-header">
+      <div class="login-logo">
+        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+        </svg>
+      </div>
+      <h1 class="login-title">Admin Portal</h1>
+      <p class="login-subtitle">Student Management System</p>
+    </div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email" class="form-label">
+          <span>Email Address</span>
+          <span class="required">*</span>
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control" 
+          placeholder="admin@school.edu" 
+          required 
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">
+          <span>Password</span>
+          <span class="required">*</span>
+        </label>
+        <div class="input-password-wrap">
+          <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="••••••••" 
+            required 
+            autocomplete="current-password"
+          >
+          <span class="toggle-password-btn" id="toggle-password-btn" title="Toggle password visibility">👁</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-600); cursor: pointer;">
+          <input type="checkbox" id="remember-me" checked> Remember session
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="login-submit-btn" style="width: 100%; padding: 0.8rem;">
+        Sign In to Dashboard &rarr;
+      </button>
+
+      <!-- Quick evaluation helper -->
+      <div class="demo-credentials-box">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span>Demo Credentials:</span>
+          <span class="badge badge-primary">One-Click</span>
+        </div>
+        <div style="margin-top: 4px;">
+          Email: <strong>admin@school.edu</strong><br>
+          Password: <strong>admin123</strong>
+        </div>
+        <button type="button" class="btn btn-secondary demo-fill-btn" id="demo-fill-btn">
+          Autofill Demo Account
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script type="module">
+    import { setupLoginForm } from './js/auth.js';
+    setupLoginForm();
+  </script>
+</body>
+</html>

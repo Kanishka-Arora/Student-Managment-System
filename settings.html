@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings & System | Student Management System</title>
+  <meta name="description" content="System settings, Firebase configuration inspector, and database backup controls.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-logo-icon">S</div>
+        <div>
+          <span class="sidebar-brand-text">EduAdmin</span>
+          <span class="sidebar-brand-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        
+        <a href="dashboard.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="students.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <span>Students</span>
+        </a>
+
+        <a href="add-student.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+          <span>Add Student</span>
+        </a>
+
+        <span class="nav-section-title" style="margin-top: 1rem;">System</span>
+
+        <a href="settings.html" class="nav-link active">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Settings</span>
+        </a>
+
+        <a href="#" class="nav-link" data-action="logout" style="color: #F87171;">
+          <svg fill="none" stroke="#F87171" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+          <span>Logout</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      
+      <!-- Top Navigation Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon topbar-toggle" aria-label="Toggle Sidebar">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <div class="page-title-group">
+            <h1>System Settings</h1>
+            <p>Database connection status, Firebase configuration, and data tools.</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="user-profile-pill">
+            <div class="user-avatar">AD</div>
+            <div class="user-info">
+              <div class="user-name">admin@school.edu</div>
+              <div class="user-role">Administrator</div>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary btn-sm" data-action="logout" title="Sign Out">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+            <span>Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Settings Content -->
+      <main class="page-content">
+        <div style="max-width: 900px; margin: 0 auto;">
+
+          <!-- Firebase Status Card -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color: #F59E0B;"><path d="M4.5 17.5l2-11.5 5 5-7 6.5zm8-13.5l2.5 3.5 5.5-1.5-8 14-3.5-3.5 3.5-12.5zm6.5 4.5l-6.5 11.5 9-4.5-2.5-7z"/></svg>
+                Firebase Connection Status
+              </h2>
+              <div id="firebase-status-badge">
+                <!-- Dynamically populated badge -->
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div id="firebase-status-details" style="margin-bottom: 1.5rem;">
+                <!-- Status explanation -->
+              </div>
+
+              <div class="form-section-title">Where to configure your Firebase Project</div>
+              <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
+                Open <code style="background: var(--slate-100); padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600;">js/firebase-config.js</code> and paste your Firebase Web App configuration object:
+              </p>
+
+              <pre style="background: #0F172A; color: #38BDF8; padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.85rem; overflow-x: auto; line-height: 1.5;"><code>export const firebaseConfig = {
+  apiKey: "AIzaSy...",
+  authDomain: "your-app.firebaseapp.com",
+  projectId: "your-app",
+  storageBucket: "your-app.appspot.com",
+  messagingSenderId: "1234567890",
+  appId: "1:1234567890:web:abc123456"
+};</code></pre>
+            </div>
+          </div>
+
+          <!-- Data Management Card -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7M4 7c0-2 1.5-3 3.5-3h9c2 0 3.5 1 3.5 3M4 7h16m-8 4v6m-3-3h6"/></svg>
+                Data Tools & Backup
+              </h2>
+            </div>
+            <div class="card-body">
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-800);">Export All Students (JSON)</div>
+                    <div style="font-size: 0.8rem; color: var(--slate-500);">Download a full JSON backup of all registered student records.</div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm" id="btn-export-json">
+                    Download Backup JSON
+                  </button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-800);">Reset Demo Test Records</div>
+                    <div style="font-size: 0.8rem; color: var(--slate-500);">Restore the 5 standard sample students for evaluation and testing.</div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm" id="btn-reset-demo" style="color: var(--danger-600);">
+                    Reset Demo Data
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Firestore Security Rules Card -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                Recommended Firestore Security Rules
+              </h2>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
+                In the Firebase Console under <strong>Firestore Database &gt; Rules</strong>, apply the rules defined in <code style="background: var(--slate-100); padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600;">firestore.rules</code>:
+              </p>
+
+              <pre style="background: #0F172A; color: #A7F3D0; padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.85rem; overflow-x: auto; line-height: 1.5;"><code>rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only authenticated administrative users can read and write student data
+    match /students/{studentId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script type="module">
+    import { isFirebaseConfigured, DataService } from './js/firebase-config.js';
+    import { setupLogoutButton } from './js/auth.js';
+    import { setupSidebarToggle } from './js/dashboard.js';
+    import { showToast } from './js/utils.js';
+
+    setupLogoutButton();
+    setupSidebarToggle();
+
+    // Check Firebase status
+    const configured = isFirebaseConfigured();
+    const badgeContainer = document.getElementById('firebase-status-badge');
+    const detailsContainer = document.getElementById('firebase-status-details');
+
+    if (configured) {
+      badgeContainer.innerHTML = `<span class="badge badge-active"><span class="badge-dot"></span> Live Firestore Connected</span>`;
+      detailsContainer.innerHTML = `
+        <div style="background: var(--success-50); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 1rem; color: var(--success-700); font-size: 0.875rem;">
+          <strong>Status: Connected &amp; Online.</strong> The application is currently saving and querying real-time student documents in your Firebase Firestore project.
+        </div>
+      `;
+    } else {
+      badgeContainer.innerHTML = `<span class="badge badge-primary">Demo / Local Evaluation Mode</span>`;
+      detailsContainer.innerHTML = `
+        <div style="background: var(--primary-50); border: 1px solid var(--primary-200); border-radius: var(--radius-md); padding: 1rem; color: var(--primary-800); font-size: 0.875rem; line-height: 1.5;">
+          <strong>Running in Local Interactive Evaluation Mode.</strong> All CRUD features, searches, filters, and statistics are fully functional using client storage. Once you paste your Firebase keys in <code>js/firebase-config.js</code>, it will automatically switch to cloud Firestore.
+        </div>
+      `;
+    }
+
+    // Export JSON
+    document.getElementById('btn-export-json')?.addEventListener('click', async () => {
+      const students = await DataService.getAllStudents();
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(students, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `students_backup_${new Date().toISOString().slice(0,10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast('Student database exported as JSON!', 'success');
+    });
+
+    // Reset Demo Data
+    document.getElementById('btn-reset-demo')?.addEventListener('click', () => {
+      if (confirm('Reset local student records to initial sample data?')) {
+        DataService.resetDemoData();
+        showToast('Demo data restored.', 'info');
+        setTimeout(() => location.reload(), 600);
+      }
+    });
+  </script>
+</body>
+</html>

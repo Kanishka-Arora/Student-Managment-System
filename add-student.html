@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student | Student Management System</title>
+  <meta name="description" content="Enroll a new student record into the system with verified credentials and details.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-logo-icon">S</div>
+        <div>
+          <span class="sidebar-brand-text">EduAdmin</span>
+          <span class="sidebar-brand-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        
+        <a href="dashboard.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="students.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <span>Students</span>
+        </a>
+
+        <a href="add-student.html" class="nav-link active">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+          <span>Add Student</span>
+        </a>
+
+        <span class="nav-section-title" style="margin-top: 1rem;">System</span>
+
+        <a href="settings.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Settings</span>
+        </a>
+
+        <a href="#" class="nav-link" data-action="logout" style="color: #F87171;">
+          <svg fill="none" stroke="#F87171" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+          <span>Logout</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      
+      <!-- Top Navigation Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon topbar-toggle" aria-label="Toggle Sidebar">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <div class="page-title-group">
+            <h1>Add New Student</h1>
+            <p>Fill in the required information to register a new student.</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <a href="students.html" class="btn btn-secondary btn-sm">
+            &larr; Back to Directory
+          </a>
+
+          <div class="user-profile-pill">
+            <div class="user-avatar">AD</div>
+            <div class="user-info">
+              <div class="user-name">admin@school.edu</div>
+              <div class="user-role">Administrator</div>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary btn-sm" data-action="logout" title="Sign Out">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+            <span>Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Form Page Content -->
+      <main class="page-content">
+        <div style="max-width: 860px; margin: 0 auto;">
+          
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Student Registration Form</h2>
+                <p class="card-subtitle">All fields marked with an asterisk (<span style="color: var(--danger-500);">*</span>) are required.</p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <form id="add-student-form">
+
+                <!-- 1. Academic Identifiers -->
+                <div class="form-section-title">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+                  Academic Identifier & Status
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="studentId">
+                      <span>Student ID</span>
+                      <span class="required">*</span>
+                    </label>
+                    <div style="display: flex; gap: 0.5rem;">
+                      <input type="text" id="studentId" class="form-control" placeholder="STU-2026-XXXX" required>
+                      <button type="button" class="btn btn-secondary btn-sm" id="btn-generate-id" title="Generate Random Student ID">
+                        Auto
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="status">
+                      <span>Enrollment Status</span>
+                      <span class="required">*</span>
+                    </label>
+                    <select id="status" class="form-control" required>
+                      <option value="Active" selected>Active</option>
+                      <option value="Inactive">Inactive</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- 2. Personal Information -->
+                <div class="form-section-title" style="margin-top: 1.5rem;">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                  Personal Information
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="name">
+                      <span>Full Name</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="text" id="name" class="form-control" placeholder="e.g. Alexander Hamilton" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="gender">
+                      <span>Gender</span>
+                      <span class="required">*</span>
+                    </label>
+                    <select id="gender" class="form-control" required>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="dateOfBirth">
+                      <span>Date of Birth</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="date" id="dateOfBirth" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="email">
+                      <span>Email Address</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="email" id="email" class="form-control" placeholder="student@school.edu" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="phone">
+                      <span>Phone Number</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 019-2834" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="enrollmentDate">
+                      <span>Enrollment Date</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="date" id="enrollmentDate" class="form-control" required>
+                  </div>
+                </div>
+
+                <!-- 3. Academic Placement -->
+                <div class="form-section-title" style="margin-top: 1.5rem;">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+                  Program & Department
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="course">
+                      <span>Course / Degree Program</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="text" id="course" class="form-control" placeholder="e.g. B.Tech Computer Science" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="department">
+                      <span>Academic Department</span>
+                      <span class="required">*</span>
+                    </label>
+                    <input type="text" id="department" class="form-control" placeholder="e.g. Engineering, Science, Business" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="semester">
+                      <span>Current Semester</span>
+                      <span class="required">*</span>
+                    </label>
+                    <select id="semester" class="form-control" required>
+                      <option value="1st">1st Semester</option>
+                      <option value="2nd">2nd Semester</option>
+                      <option value="3rd">3rd Semester</option>
+                      <option value="4th">4th Semester</option>
+                      <option value="5th">5th Semester</option>
+                      <option value="6th">6th Semester</option>
+                      <option value="7th">7th Semester</option>
+                      <option value="8th">8th Semester</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- 4. Residential Address -->
+                <div class="form-section-title" style="margin-top: 1.5rem;">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  Contact Address
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="address">
+                    <span>Street Address, City, State & Zip</span>
+                  </label>
+                  <textarea id="address" class="form-control" placeholder="Full residential address..."></textarea>
+                </div>
+
+                <!-- Submission Bar -->
+                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                  <a href="students.html" class="btn btn-secondary">Cancel</a>
+                  <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.75rem;">
+                    Add Student Record
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script type="module">
+    import { setupLogoutButton } from './js/auth.js';
+    import { setupSidebarToggle } from './js/dashboard.js';
+    import { initAddStudentPage } from './js/students.js';
+
+    setupLogoutButton();
+    setupSidebarToggle();
+    initAddStudentPage();
+  </script>
+</body>
+</html>
